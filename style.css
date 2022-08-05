@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500&family=M+PLUS+1p:wght@400;500&family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Header and whole nav*/
+header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 5px 20px;
+    position: fixed;
+    top: 1%;
+    z-index: 2;
+    width: 100%;
+}
+
+nav a:hover{
+    transition:  0.75s;
+    color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,.15);
+    backdrop-filter: blur(15px);
+    width: 20px;
+    padding: 5px 10px;
+    border-radius: 9px;
+    backdrop-filter: blur(5px);
+
+  }
+
+
+
+/*Sets the rules for the page*/
+body{
+    color: black;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/*When shrink the center content disapears leaving the menu only*/
+@media only screen and (max-width:940px) {
+  .desktop {
+	position: absolute;
+	left: -1000px;
+}
+}
+
+/*When it's website size the main bar appears*/
+.desktop{
+    display: initial;
+}
+
+
+/*Tesla logo*/
+a.logo{
+    height: 12px;
+    width: 100px;
+    color: inherit;
+    margin-left: 10px;
+}
+
+/*The whole header bar text */
+header a{
+    color: inherit;
+    font-weight: 450;
+}
+
+/*To center the main nav*/
+header nav.center{
+    text-align: center;
+}
+
+/*To remove the underlines of the nav*/
+header nav a{
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/*The menu and everything else go to the right*/
+header nav.right{
+    text-align: right;
+}
+
+/*For the sections of the page*/
+section{
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+section .content{
+    top: 0;
+   /* opacity: 0;
+    position: fixed;*/
+    width: 100%;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    transition: opacity .3 ease;
+
+}
+
+section.active .content{
+    opacity: 1;
+}
+
+section h1{
+    font-size: 3rem;
+
+
+}
+
+section a{
+    color: inherit;
+
+}
+
+section .buttons a{
+    display: block;
+    background-color:#eee;
+    color: inherit;
+    padding: 12px 60px;
+    border-radius: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+section .buttons a:first-child{
+    background-color: #444;
+    color: white;
+}
+
+section .buttons{
+    display: grid;
+    row-gap: 20px;
+    margin: 0 40px;
+}
+
+
+@media (min-width:768px) {
+
+    section .buttons{
+        max-width: 640px;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        column-gap: 30px;
+
+    }
+
+    
+
+
+}
+
+
+aside{
+    position: fixed;
+    right: -320px;
+    width: 320px;
+    background-color: white;
+    padding: 80px 40px;
+    z-index: 4;
+    height: 100vh;
+    transition: right .4s ease;
+}
+
+aside.active{
+    right:0;
+}
+
+
+
+
+aside a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 0;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+aside button.close{
+    font-size: 30px;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.backdrop{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,.35);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    display: none;
+}
+
+.backdrop.active{
+    display: block;
+
+}
+
+aside a:hover{
+    transition:  0.55s;
+    color: rgb(0, 0, 0);
+    background-color: lightgray;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+
+#fullpage.no-scroll {
+	overflow-y: hidden;
+	max-height: 100vh;
+}
+
